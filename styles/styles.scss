@@ -1,0 +1,141 @@
+@import "config";
+
+html {
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    display: grid;
+
+    height: 100%;
+    width: 100%;
+
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "m i";
+}
+
+.header {
+    grid-area: h;
+    background: none;
+    height: 100%;
+    width: 100%;
+    @include flexCenter();
+    display: none;
+    justify-content: start;
+}
+
+.main-content {
+    grid-area: m;
+    background: none;
+    border: solid blue 2px;
+    background: url("/images/bg-pattern-desktop.svg") no-repeat;
+    background-size: 100%;
+    @include flexCenter(column);
+    width: 100%;
+    // @include flexCenter(column);
+
+    .main-content--wrap {
+        background: rgba(0, 0, 0, 0.199);
+        width: 700px;
+        height: 85%;
+    }
+
+    .desktop-logo {
+        outline: solid yellow 2px;
+
+        // img {
+        //     height: 40px;
+        // }
+    }
+
+    .main--wrap {
+        outline: solid red 2px;
+        margin-top: 10em;
+        width: max-content;
+
+        .main__h1 {
+            font-size: 7rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            max-width: 6ch;
+            letter-spacing: 0.15em;
+
+            span {
+                font-weight: 300;
+            }
+        }
+
+        .main__p {
+            line-height: 1.6;
+            max-width: 40ch;
+        }
+
+        input {
+            border-radius: 999px;
+            width: 100%;
+            padding: 1em 1.5em;
+        }
+    }
+}
+
+.hero-img {
+    grid-area: i;
+    background: none;
+    background: url("/images/hero-desktop.jpg") no-repeat center;
+    background-size: cover;
+    filter: sepia(35%);
+    filter: contrast(105%);
+
+    // img {
+    //     object-fit: cover;
+    //     height: 100%;
+    //     width: 100%;
+    //     margin: 0;
+    //     display: block;
+    // }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 250px auto;
+        grid-template-areas:
+            "h"
+            "i"
+            "m";
+    }
+
+    .header {
+        display: flex;
+    }
+
+    .hero-img {
+        background: url("/images/hero-mobile.jpg") no-repeat top;
+        background-size: cover;
+    }
+
+    .desktop-logo {
+        display: none;
+    }
+}

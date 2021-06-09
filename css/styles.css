@@ -1,0 +1,162 @@
+html {
+  height: 100%;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  -ms-grid-columns: 1.5fr 1fr;
+      grid-template-columns: 1.5fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "m i";
+}
+
+.header {
+  grid-area: h;
+  background: none;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: none;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.main-content {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: m;
+  background: none;
+  border: solid blue 2px;
+  background: url("/images/bg-pattern-desktop.svg") no-repeat;
+  background-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.main-content .main-content--wrap {
+  background: rgba(0, 0, 0, 0.199);
+  width: 700px;
+  height: 85%;
+}
+
+.main-content .desktop-logo {
+  outline: solid yellow 2px;
+}
+
+.main-content .main--wrap {
+  outline: solid red 2px;
+  margin-top: 10em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.main-content .main--wrap .main__h1 {
+  font-size: 7rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  max-width: 6ch;
+  letter-spacing: 0.15em;
+}
+
+.main-content .main--wrap .main__h1 span {
+  font-weight: 300;
+}
+
+.main-content .main--wrap .main__p {
+  line-height: 1.6;
+  max-width: 40ch;
+}
+
+.main-content .main--wrap input {
+  border-radius: 999px;
+  width: 100%;
+  padding: 1em 1.5em;
+}
+
+.hero-img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: i;
+  background: none;
+  background: url("/images/hero-desktop.jpg") no-repeat center;
+  background-size: cover;
+  -webkit-filter: sepia(35%);
+          filter: sepia(35%);
+  -webkit-filter: contrast(105%);
+          filter: contrast(105%);
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 100px 250px auto;
+        grid-template-rows: 100px 250px auto;
+        grid-template-areas: "h" "i" "m";
+  }
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .hero-img {
+    background: url("/images/hero-mobile.jpg") no-repeat top;
+    background-size: cover;
+  }
+  .desktop-logo {
+    display: none;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
